@@ -1,0 +1,146 @@
+this is text file for io handling in java
+
+
+import java.util.*;
+
+interface A
+{
+  void getdata ();
+  void dispdata ();
+  void caldata ();
+}
+
+class Bank implements A
+{
+  int ano, bal, withdraw, deposit;
+  String name, address;
+  public void getdata ()
+  {
+    Scanner s1 = new Scanner (System.in);
+      ano = s1.nextInt ();
+      bal = s1.nextInt ();
+      name = s1.next ();
+      address = s1.next ();
+  }
+
+  public void dispdata ()
+  {
+    System.out.println ("Name=" + name + " accountno=" + ano + " address=" +
+            address + " balance=" + bal);
+  }
+  public void caldata ()
+  {
+    Scanner s1 = new Scanner (System.in);
+    withdraw = s1.nextInt ();
+    bal=bal-withdraw;
+
+  }
+
+}
+
+public class Main
+{
+  public static void main (String[]args)
+  {
+    System.out.println ("Hello World");
+
+    Bank b = new Bank ();
+      b.getdata ();
+      b.dispdata ();
+  }
+}
+
+
+
+
+
+
+
+import java.util.*;
+
+
+public class Main
+{
+  public static void main (String[]args)
+  {
+    System.out.println ("Hello World");
+
+
+    int a, b, c = 0;
+    Scanner s1 = new Scanner (System.in);
+     // a = s1.nextInt ();
+      b = s1.nextInt ();
+    int arr[] = new int[5];
+
+
+      try
+    {  
+      a = s1.nextInt ();
+      c = a / b;
+      System.out.println ("Value of c=" + c);
+
+      for (int i = 0; i <=arr.length; i++)
+      arr[i] = s1.nextInt ();
+    
+      for (int i = 0; i < arr.length - 1; i++)
+    System.out.println (arr[i]);
+    } catch (ArithmeticException e)
+    {
+      System.out.println ("Divide by Zero " + e);
+    }
+    catch (ArrayIndexOutOfBoundsException e)
+    {
+      System.out.println ("Exception is - " + e);
+    }
+     catch (InputMismatchException e)
+    {
+      System.out.println ("Exception is - " + e);
+    }
+    System.out.println ("Program ends");
+
+  }
+}
+
+
+
+
+import java.util.*;
+
+class MyExceptionClass extends Exception
+
+{  MyExceptionClass(String s){
+   super(s);  
+}
+    
+     
+}
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        System.out.println("Hello World");
+        
+        
+        int a;
+        Scanner s1 = new Scanner (System.in);
+        a=s1.nextInt();
+        
+        try {
+            if(a==0)
+            {
+              
+              throw new MyExceptionClass("Value Cannot be zero");
+            }
+        }
+        catch(MyExceptionClass m)
+        {
+            System.out.println(m);
+        }
+        finally {
+            System.out.println("Value of a = "+a);
+        }
+        
+        System.out.println("Program Ends");
+    }
+}
